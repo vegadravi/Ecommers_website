@@ -45,20 +45,37 @@
   
   .container {
     max-width: 500px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 373px 0;
-  // background-image: url('../../../assets/pexels-andreea-ch-1166644.jpg');
-  // background: yellow;
+	  width: 100%;
+	  margin: 0 auto;
+	  padding: 200px 0 0 0;
   }
+  @media (min-width:800px) {
+    .container {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      // padding: 250px 0;
+    }
+    .parent-container{
+      background: url('../../../assets/pexels-jayant-kulkarni-910213\ \(4\).jpg');
+      background-repeat: no-repeat;
+      background-size: cover !important;
+      border-radius: 5px;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+}
   .parent-container{
     
     background: url('../../../assets/pexels-jayant-kulkarni-910213\ \(4\).jpg');
     background-repeat: no-repeat;
-    background-size: auto;
-    // opacity: 2px;
+    background-size: cover !important;
     border-radius: 5px;
     position: relative;
+    width: 100vw;
+    height: 100vh;
+
 
 }
   

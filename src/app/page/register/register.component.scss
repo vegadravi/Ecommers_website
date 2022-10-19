@@ -45,19 +45,36 @@
   
   .container {
     max-width: 500px;
-	width: 100%;
-	margin: 0 auto;
-	padding: 250px 0;
+	  width: 100%;
+	  margin: 0 auto;
+	  // padding: 250px 0;
   }
-  .parent-container{
-    background: url('../../../assets/pexels-jayant-kulkarni-910213\ \(4\).jpg');
-    background-repeat: no-repeat;
-    background-size: auto;
-    // opacity: 2px;
-    border-radius: 5px;
-    position: relative;
-
+  @media (min-width:800px) {
+    .container {
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      // padding: 250px 0;
+    }
+    .parent-container{
+      background: url('../../../assets/pexels-jayant-kulkarni-910213\ \(4\).jpg');
+      background-repeat: no-repeat;
+      background-size: cover !important;
+      border-radius: 5px;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
 }
+  .parent-container{
+      background: url('../../../assets/pexels-jayant-kulkarni-910213\ \(4\).jpg');
+      background-repeat: no-repeat;
+      border-radius: 5px;
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover !important;
+  }
   
   .col-25 {
     float: left;
@@ -83,7 +100,7 @@
   
   /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit],input[type=password],input[type=date] {
+    .col-25, .col-75 {
       width: 100%;
       margin-top: 0;
     }
