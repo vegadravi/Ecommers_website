@@ -1,14 +1,17 @@
-<div class="logo">
-    <img src="../../../assets/Only T-shirt resize.png"/>
+<div class="parent-header">
+    <div class="logo" [routerLink]="['/home']" >
+        <img  src="../../../assets/Only T-shirt resize.png"/>
+    </div>
+    <nav class="mobile-menu">
+        <label for="show-menu" class="show-menu"><span>Menu</span>
+            <div class="lines"></div>
+        </label>
+        <input type="checkbox" id="show-menu">
+        
+        <ul id="menu">
+            <li><a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  >Brand</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
 </div>
-<nav class="mobile-menu">
-    <label for="show-menu" class="show-menu"><span>Menu</span>
-        <div class="lines"></div>
-    </label>
-    <input type="checkbox" id="show-menu">
-    
-    <ul id="menu">
-        <li><a href="#">Brand</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
+

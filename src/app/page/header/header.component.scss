@@ -33,7 +33,9 @@ body {
     background: #25274D;
 }
 .logo{
-    background: #f8f8f8;
+    background: #25274D;
+    display: flex;
+	align-items: center;
 }
 .logo img{
     height: 44px;
@@ -108,7 +110,7 @@ body {
     color: #fff;
     background: #25274D;
     text-align: center;
-    padding: 10px 15px;
+    padding: 20px 15px;
     display: none;
     cursor: pointer;
     text-transform: uppercase;
@@ -162,4 +164,15 @@ body {
     .mobile-menu .show-menu {
         display: block;
     }
+    .logo{
+        background: #25274D;
+        display: none;
+        // align-items: center;
+    }
+    .logo img{
+        display: none;
+    }
+}
+.parent-header{
+    display: flex;
 }
