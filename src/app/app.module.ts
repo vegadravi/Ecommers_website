@@ -11,6 +11,7 @@ import { FooterComponent } from './page/footer/footer.component';
 import { WildcardComponent } from './page/wildcard/wildcard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrandHomeComponent } from './page/brand-home/brand-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     HomeComponent,
     FooterComponent,
-    WildcardComponent
+    WildcardComponent,
+    BrandHomeComponent
   ],
   imports: [
     BrowserModule,

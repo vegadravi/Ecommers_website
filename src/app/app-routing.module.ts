@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BrandHomeComponent } from './page/brand-home/brand-home.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
 import { RegisterComponent } from './page/register/register.component';
@@ -9,6 +10,10 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: '/login', pathMatch: 'full'
+  },
+  {
+    path:'brand',
+    component:BrandHomeComponent 
   },
   {
     path:'register',
@@ -30,7 +35,8 @@ const routes: Routes = [
     path:'',
     redirectTo:'form',
     pathMatch:'full',
-  }
+  },
+  
 ];
 
 @NgModule({
