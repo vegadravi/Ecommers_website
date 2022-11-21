@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContactComponent } from './page/contact/contact.component';
 import { BrandHomeComponent } from './page/brand-home/brand-home.component';
 import { HomeComponent } from './page/home/home.component';
 import { LoginComponent } from './page/login/login.component';
 import { RegisterComponent } from './page/register/register.component';
 import { WildcardComponent } from './page/wildcard/wildcard.component';
+import { AdminLoginComponent } from './page/admin-login/admin-login.component';
+import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
+import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 
 const routes: Routes = [ 
   {
@@ -16,8 +20,21 @@ const routes: Routes = [
     component:BrandHomeComponent 
   },
   {
+    path:'contact',
+    component:ContactComponent
+
+  },
+  {
     path:'register',
     component:RegisterComponent    
+  },
+  {
+    path:'admin-register',
+    component:AdminRegisterComponent
+  },
+  {
+    path:'admin-home',
+    component:AdminHomeComponent    
   },
   {
     path:'home',
@@ -26,6 +43,11 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'admin',
+    component:AdminLoginComponent
+
   },
   {
     path: '**',

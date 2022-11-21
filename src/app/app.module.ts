@@ -12,6 +12,10 @@ import { WildcardComponent } from './page/wildcard/wildcard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrandHomeComponent } from './page/brand-home/brand-home.component';
+import { ContactComponent } from './page/contact/contact.component';
+import { AdminLoginComponent } from './page/admin-login/admin-login.component';
+import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
+import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,11 @@ import { BrandHomeComponent } from './page/brand-home/brand-home.component';
     HomeComponent,
     FooterComponent,
     WildcardComponent,
-    BrandHomeComponent
+    BrandHomeComponent,
+    ContactComponent,
+    AdminLoginComponent,
+    AdminRegisterComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

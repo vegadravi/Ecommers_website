@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import * as _ from 'lodash';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +8,19 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'website';
-  constructor(public router: Router){}
+  constructor(public router: Router){
+  
+  }
+  
+  hideloginregister(){
+    let hiderouterpath:any = [
+      '/login',
+      '/register',
+      '/admin-home'
+    ]
+    let routerPath = this.router.url;
+    let hideNavigationbar =_.find(hiderouterpath, (data:any) => routerPath.includes(data))
+    return hideNavigationbar;
+  }
+  
 }
