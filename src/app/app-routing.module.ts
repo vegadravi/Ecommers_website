@@ -9,15 +9,20 @@ import { WildcardComponent } from './page/wildcard/wildcard.component';
 import { AdminLoginComponent } from './page/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
+import { LoginTypeComponent } from './page/login-type/login-type.component';
 
 const routes: Routes = [ 
   {
     path: '',
-    redirectTo: '/login', pathMatch: 'full'
+    redirectTo: '/home', pathMatch: 'full'
   },
   {
     path:'brand',
     component:BrandHomeComponent 
+  },
+  {
+    path:'login-type',
+    component:LoginTypeComponent
   },
   {
     path:'contact',

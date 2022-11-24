@@ -16,6 +16,7 @@ import { ContactComponent } from './page/contact/contact.component';
 import { AdminLoginComponent } from './page/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
+import { LoginTypeComponent } from './page/login-type/login-type.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { AdminHomeComponent } from './page/admin-home/admin-home.component';
     ContactComponent,
     AdminLoginComponent,
     AdminRegisterComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    LoginTypeComponent
   ],
   imports: [
     BrowserModule,
