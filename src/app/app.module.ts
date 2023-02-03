@@ -17,6 +17,8 @@ import { AdminLoginComponent } from './page/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 import { LoginTypeComponent } from './page/login-type/login-type.component';
+import { CustomerHomeComponent } from './page/customer-home/customer-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { LoginTypeComponent } from './page/login-type/login-type.component';
     AdminLoginComponent,
     AdminRegisterComponent,
     AdminHomeComponent,
-    LoginTypeComponent
+    LoginTypeComponent,
+    CustomerHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -43,9 +43,11 @@ body {
 /*Create a horizontal list with spacing*/
 .mobile-menu li {
     display: inline-block;
+    margin-right: inherit;
+}
     /*float: left;
       margin-right: 1px;*/
-}
+
 
 /*Style for menu links*/
 .mobile-menu li a {
@@ -57,7 +59,7 @@ body {
     text-transform: uppercase;
     background: #25274D;
     text-decoration: none;
-    margin-left: -5px;
+    margin-left: 120px;
     padding: 10px 0;
     -webkit-transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;

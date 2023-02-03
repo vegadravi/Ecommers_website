@@ -17,7 +17,9 @@ export class AppComponent {
       '/login',
       '/register',
       '/admin-home',
-      '/home'
+      '/home',
+      '/admin-register',
+      '/admin'
     ]
     let routerPath = this.router.url;
     let hideNavigationbar =_.find(hiderouterpath, (data:any) => routerPath.includes(data))

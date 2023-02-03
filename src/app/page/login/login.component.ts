@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         const findObj = _.find(userData, (o: any)=> o.email === this.registerForm.value.email && o.password === this.registerForm.value.password);
         console.log(findObj);
         if (findObj) {
-          this.router.navigate(['../','home'],{relativeTo:this.activerouter})
+          this.router.navigate(['../','customer-home'],{relativeTo:this.activerouter})
         } else {
           alert("Error")
         }

@@ -33,7 +33,8 @@
               "node_modules/primeicons/primeicons.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/smtp.js"
             ]
           },
           "configurations": {

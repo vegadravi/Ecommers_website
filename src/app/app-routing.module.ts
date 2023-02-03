@@ -10,6 +10,7 @@ import { AdminLoginComponent } from './page/admin-login/admin-login.component';
 import { AdminRegisterComponent } from './page/admin-register/admin-register.component';
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 import { LoginTypeComponent } from './page/login-type/login-type.component';
+import { CustomerHomeComponent } from './page/customer-home/customer-home.component';
 
 const routes: Routes = [ 
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path:'brand',
     component:BrandHomeComponent 
+  },
+  {
+    path:'customer-home',
+    component:CustomerHomeComponent
   },
   {
     path:'login-type',

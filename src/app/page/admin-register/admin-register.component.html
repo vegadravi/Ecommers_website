@@ -1,8 +1,8 @@
 <div  class="parent-container" style="min-width: 100%;min-height: 100%;">
     <div class="container">
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div style="font-weight:bold;font-size: xx-large !important;">Admin Register Page</div>
-            <div class="row">
+        <form [formGroup]="registerForm" (click)="onSubmit()">
+            <div style="font-weight:bold;font-size: xx-large !important;">Send Email</div>
+            <!-- <div class="row">
                 <div class="col-25">
                     <label for="fname">Title</label>
                 </div>
@@ -43,7 +43,7 @@
                         <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="col-25">
                     <label for="lname">Email</label>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-25">
                     <label for="lname">Password</label>
                 </div>
@@ -82,10 +82,12 @@
                         <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <input type="submit"  value="Submit">
             </div>
         </form>
     </div>
 </div>
+<!-- 
+<input type="button" value="Send Email" (click)="sendEmail()"> -->

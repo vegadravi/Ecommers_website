@@ -14,6 +14,7 @@
 	width: 100%;
 	max-width: 550px;
 	margin: 0 auto;
+  position: absolute;
   }
   input[type=text],input[type=password],input[type=date] ,select, textarea {
     width: 75%;
@@ -47,6 +48,8 @@
     max-width: 500px;
 	  width: 100%;
 	  margin: 0 auto;
+    position: relative;
+    top: 167px;
 	  // padding: 250px 0;
   }
   @media (min-width:800px) {

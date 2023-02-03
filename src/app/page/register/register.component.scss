@@ -13,6 +13,7 @@
   form{
 	width: 100%;
 	max-width: 550px;
+  position: absolute;
 	margin: 0 auto;
   }
   input[type=text],input[type=password],input[type=date] ,select, textarea {
@@ -46,6 +47,8 @@
   .container {
     max-width: 500px;
 	  width: 100%;
+    position: relative;
+    top: 167px; 
 	  margin: 0 auto;
 	  // padding: 250px 0;
   }
