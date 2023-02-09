@@ -18,6 +18,7 @@ import { AdminRegisterComponent } from './page/admin-register/admin-register.com
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 import { LoginTypeComponent } from './page/login-type/login-type.component';
 import { CustomerHomeComponent } from './page/customer-home/customer-home.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CustomerHomeComponent } from './page/customer-home/customer-home.compon
     AdminRegisterComponent,
     AdminHomeComponent,
     LoginTypeComponent,
-    CustomerHomeComponent
+    CustomerHomeComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -40,7 +40,8 @@ export class AdminLoginComponent implements OnInit {
         });
         console.log(userData);
         const findObj = _.find(userData, (o: any)=> o.email === this.registerForm.value.email && o.password === this.registerForm.value.password);
-        console.log(findObj);
+        console.log( 'findobj',findObj);
+        window.localStorage.setItem("findObj", JSON.stringify(findObj));
         if (findObj) {
           this.router.navigate(['../','admin-home'],{relativeTo:this.activerouter})
         } else {
