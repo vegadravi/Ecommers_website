@@ -11,6 +11,12 @@ import { AdminRegisterComponent } from './page/admin-register/admin-register.com
 import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 import { LoginTypeComponent } from './page/login-type/login-type.component';
 import { CustomerHomeComponent } from './page/customer-home/customer-home.component';
+// import { AdminItemsComponent } from './admin-items/admin-items.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { AdminViewOrderComponent } from './admin-view-order/admin-view-order.component';
+import { AdminItemsComponent } from './page/admin-items/admin-items.component';
+import { AdminHelpComponent } from './page/admin-help/admin-help.component';
+import { AdminSettingComponent } from './page/admin-setting/admin-setting.component';
 
 const routes: Routes = [ 
   {
@@ -29,6 +35,7 @@ const routes: Routes = [
     path:'login-type',
     component:LoginTypeComponent
   },
+ 
   {
     path:'contact',
     component:ContactComponent
@@ -44,7 +51,7 @@ const routes: Routes = [
   },
   {
     path:'admin-home',
-    component:AdminHomeComponent    
+    component:AdminHomeComponent,
   },
   {
     path:'home',
@@ -53,6 +60,22 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'admin-view-order',
+    component:AdminViewOrderComponent
+  },
+  {
+    path:'admin-item',
+    component:AdminItemsComponent
+  },
+  {
+    path:'admin-help',
+    component:AdminHelpComponent
+  },
+  {
+    path:'admin-setting',
+    component:AdminSettingComponent
   },
   {
     path:'admin',
@@ -72,7 +95,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false, scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

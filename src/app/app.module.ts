@@ -19,6 +19,16 @@ import { AdminHomeComponent } from './page/admin-home/admin-home.component';
 import { LoginTypeComponent } from './page/login-type/login-type.component';
 import { CustomerHomeComponent } from './page/customer-home/customer-home.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
+// import { AdminItemsComponent } from './admin-items/admin-items.component';
+import { AdminSidenavComponent } from './admin-sidenav/admin-sidenav.component';
+import { AdminViewOrderComponent } from './admin-view-order/admin-view-order.component';
+import { AdminItemsComponent } from './page/admin-items/admin-items.component';
+import { AdminHelpComponent } from './page/admin-help/admin-help.component';
+import { AdminSettingComponent } from './page/admin-setting/admin-setting.component';
+// import { AdminHomeRoutingModule } from './page/admin-home/admin-home-routing.module';
+// import { AdminItemsModule } from './page/admin-items/admin-items.module';
+// import { AdminItemsModule } from './admin-items/admin-items.module';
+// import { AdminModule } from './page/admin-home/admin-home.module';
 
 @NgModule({
   declarations: [
@@ -36,14 +46,23 @@ import { AdminHeaderComponent } from './admin-header/admin-header.component';
     AdminHomeComponent,
     LoginTypeComponent,
     CustomerHomeComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    AdminItemsComponent,
+    AdminSidenavComponent,
+    AdminViewOrderComponent,
+    AdminHelpComponent,
+    AdminSettingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // AdminHomeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    // AdminItemsModule,
+    HttpClientModule,
+    // AdminItemsModule
+    // AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,19 @@
-<app-header *ngIf="!hideloginregister()"></app-header>
-<router-outlet></router-outlet>
+ <app-header *ngIf="!hideloginregister()"></app-header>
+ <!-- <app-admin-header *ngIf="!adminhideloginregister()" ></app-admin-header>  -->
+ <div  *ngIf="adminhideloginregister()" >
+     <app-admin-header></app-admin-header>
+ </div>
+ <div class="row" >
+    <div class="column"  *ngIf="adminhideloginregister1()"   >
+        <app-admin-sidenav ></app-admin-sidenav>
+    </div>
+
+    <div class="column1">
+        <router-outlet></router-outlet>
+    </div>
+
+ </div>
+ 
+    
+ 
 <app-footer *ngIf="!hideloginregister()"></app-footer>

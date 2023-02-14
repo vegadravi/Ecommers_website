@@ -46,15 +46,25 @@
             </div>
             <div class="row">
                 <div class="col-25">
-                    <label>Date of Birth</label>
+                    <label for="lname">UserName</label>
                 </div>
                 <div class="col-75">
-                    <input type="date" formControlName="dob" class="form-control"
-                        [ngClass]="{ 'is-invalid': submitted && f.dob.errors }" />
-                    <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
-                        <div *ngIf="f.dob.errors.required">Date of Birth is required</div>
-                        <div *ngIf="f.dob.errors.pattern">Date of Birth must be a valid date in the format YYYY-MM-DD
-                        </div>
+                    <input type="text" formControlName="username" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">UserName is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">User Id</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" formControlName="userid" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.userid.errors }" />
+                    <div *ngIf="submitted && f.userid.errors" class="invalid-feedback">
+                        <div *ngIf="f.userid.errors.required">UserID is required</div>
                     </div>
                 </div>
             </div>
@@ -97,6 +107,13 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="row" for="slide-1-trigger">
+                <input type="button"  value="Next">
+            </div>
+            <input id="slide-1-trigger" type="radio" name="slides" checked/>
+                <section class="slide slide-one">
+                <h1>Headline One</h1>
+                </section> -->
             <div class="row">
                 <input type="submit"  value="Submit">
             </div>

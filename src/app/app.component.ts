@@ -8,8 +8,9 @@ import * as _ from 'lodash';
 })
 export class AppComponent {
   title = 'website';
+  routerWithNav:boolean;
   constructor(public router: Router){
-  
+    
   }
   
   hideloginregister(){
@@ -25,5 +26,36 @@ export class AppComponent {
     let hideNavigationbar =_.find(hiderouterpath, (data:any) => routerPath.includes(data))
     return hideNavigationbar;
   }
-  
+  adminhideloginregister(){
+    let hiderouterpath:any = [
+      '/register',
+      '/customer-home',
+      '/brand',
+      '/contact',
+      '/admin-home',
+      '/admin-item',
+      '/admin-view-order',
+      '/admin-setting'
+    ]
+    let routerPath = this.router.url;
+    let adminhideNavigationbar =_.find(hiderouterpath, (data:any) => routerPath.includes(data))
+    return adminhideNavigationbar;
+  }
+  adminhideloginregister1(){
+    let hiderouterpath:any = [
+      '/register',
+      '/admin-register',
+      '/customer-home',
+      '/brand',
+      '/contact',
+      '/login-type',
+      '/admin-home',
+      '/admin-item',
+      '/admin-view-order',
+      '/admin-setting'
+    ]
+    let routerPath = this.router.url;
+    let adminhideNavigationbar1 =_.find(hiderouterpath, (data:any) => routerPath.includes(data))
+    return adminhideNavigationbar1;
+  }
 }
