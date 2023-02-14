@@ -28,10 +28,6 @@ export class AppComponent {
   }
   adminhideloginregister(){
     let hiderouterpath:any = [
-      '/register',
-      '/customer-home',
-      '/brand',
-      '/contact',
       '/admin-home',
       '/admin-item',
       '/admin-view-order',
@@ -44,9 +40,6 @@ export class AppComponent {
   adminhideloginregister1(){
     let hiderouterpath:any = [
       '/register',
-      '/admin-register',
-      '/customer-home',
-      '/brand',
       '/contact',
       '/login-type',
       '/admin-home',
