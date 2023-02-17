@@ -1,70 +1,189 @@
+import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MessageService } from 'primeng/components/common/messageservice';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MustMatch } from 'src/app/validator/match.validator';
+// import {MessageService} from 'primeng/api';
+import * as _ from 'lodash';
 @Component({
   selector: 'app-admin-setting',
   templateUrl: './admin-setting.component.html',
-  styleUrls: ['./admin-setting.component.scss']
+  styleUrls: ['./admin-setting.component.scss'],
+  providers: [MessageService]
 })
 export class AdminSettingComponent implements OnInit {
   // @ViewChild('fileInput') el: ElementRef;
-  constructor(
-    public fb: FormBuilder,
-    private cd: ChangeDetectorRef
-  ) {}
-  ngOnInit(){
+  //@ViewChild('components','setting') jsonElement?: ElementRef;
+  //form:any;
+  // customForm = sample;
+  // data = {};
+  // rendered = false;
+  //constructor(
+  // public fb: FormBuilder,
+  // private cd: ChangeDetectorRef
+  //) {}
+  // ngOnInit() {
+  // this.form ={
+  //   "components": [
+  //     {
+  //       "label": "User ID",
+  //       "customClass": "col-6",
+  //       "spellcheck": false,
+  //       "tableView": false,
+  //       "validate": {
+  //           "required": true,
+  //           "customMessage": "Please enter Username first 2 characters,   Contact Number 3rd and 4th,  Email ID in @ before 2 characters "
+  //       },
+  //       "errorLabel": "Follow",
+  //       "key": "userId",
+  //       "type": "textfield",
+  //       "input": true,
+  //   },
+  //     {
+  //         "label": "Logo name",
+  //         "tableView": true,
+  //         "key": "logoName",
+  //         "type": "textfield",
+  //         "input": true
+  //     },
+  //     {
+  //         "label": "User Name",
+  //         "tableView": true,
+  //         "key": "userName",
+  //         "type": "textfield",
+  //         "input": true
+  //     },
+  //     {
+  //         "label": "Email",
+  //         "tableView": true,
+  //         "key": "email",
+  //         "type": "textfield",
+  //         "input": true
+  //     },
+  //     {
+  //         "label": "Contact No",
+  //         "tableView": true,
+  //         "key": "contactNo",
+  //         "type": "textfield",
+  //         "input": true
+  //     },
+  //     {
+  //         "type": "button",
+  //         "label": "Submit",
+  //         "key": "submit",
+  //         "disableOnInvalid": true,
+  //         "input": true,
+  //         "tableView": false
+  //     }
+  // ]
+  //}
+  //}
+  settingForm: FormGroup | any;
+  submitted = false;
+
+  constructor(private httpclient: HttpClient, private router: Router, private formBuilder: FormBuilder, private messageService: MessageService) { }
+
+  ngOnInit() {
+    
+   this.settingForm = !this.settingForm;
+    this.settingForm = this.formBuilder.group({
+      userID: ['', Validators.required],
+      userName: ['', Validators.required],
+      adminPannleName: ['', [Validators.required]],
+      // password: ['', [Validators.required, Validators.minLength(6)]],
+      // confirmPassword: ['', Validators.required],
+      // acceptTerms: [false, Validators.requiredTrue]
+    },
+      // {
+      //     validator: MustMatch('password', 'confirmPassword')
+      // }
+    );
+    //this.settingForm = !this.settingForm;
+    // let newObject = JSON.parse(window.localStorage.getItem("settingData"));
+    // console.log('R4x',newObject);
+    // this.settingForm = _.clone(newObject);
   }
 
-  /*##################### Registration Form #####################*/
-  registrationForm = this.fb.group({
-    file: [null]
-  })  
+  // convenience getter for easy access to form fields
+  get f() { return this.settingForm.controls; }
 
-  /*########################## File Upload ########################*/
- 
-  imageUrl: any = "https://i.ibb.co/fDWsn3G/buck.jpg";
-  editFile: boolean = true;
-  removeUpload: boolean = false;
-
-  uploadFile(event) {
-    let reader = new FileReader(); // HTML5 FileReader API
-    let file = event.target.files[0];
-    if (event.target.files && event.target.files[0]) {
-      reader.readAsDataURL(file);
-
-      // When file uploads set it to file formcontrol
-      reader.onload = () => {
-        this.imageUrl = reader.result;
-        this.registrationForm.patchValue({
-          file: reader.result
-        });
-        this.editFile = false;
-        this.removeUpload = true;
-      }
-      // ChangeDetectorRef since file is loading outside the zone
-      this.cd.markForCheck();        
-    }
-  }
-
-  // Function to remove uploaded file
-  removeUploadedFile() {
-    // let newFileList = Array.from(this.el.nativeElement.files);
-    this.imageUrl = 'https://i.pinimg.com/236x/d6/27/d9/d627d9cda385317de4812a4f7bd922e9--man--iron-man.jpg';
-    this.editFile = true;
-    this.removeUpload = false;
-    this.registrationForm.patchValue({
-      file: [null]
-    });
-  }
-  
-  // Submit Registration Form
   onSubmit() {
-   
-    if(!this.registrationForm.valid) {
-      alert('Please fill all the required fields to create a super hero!')
-      return false;
-    } else {
-      console.log(this.registrationForm.value)
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.settingForm.invalid) {
+      return this.messageService.add({ severity: 'error', summary: 'Error Message', detail: 'Validation failed ' });
     }
+    console.log('R4x', this.settingForm.valid);
+    if (this.settingForm.valid) {
+      let formdata = this.settingForm.value
+      this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' });
+      // this.httpclient.post('https://r4x-info-default-rtdb.firebaseio.com/setting.json', formdata).subscribe((Response) => {
+      //   this.settingForm = !this.settingForm;
+    //});
+    }
+    // this.settingForm = !this.settingForm;
+    // display form values on success
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.settingForm.value, null, 4));
   }
+  // showData(){
+  //   this.settingForm = !this.settingForm;
+  //   this.httpclient.get('https://r4x-info-default-rtdb.firebaseio.com/setting/setting.json').subscribe((data) =>{
+  //     console.log('R4x',data);
+  //   })
+  // }
+  onReset() {
+    this.submitted = false;
+    this.settingForm.reset;
+  }
+  clear() {
+    this.messageService.clear();
+  }
+
+  // submit(event) {
+  //   console.log("submit", event);
+  // }
+
+  // render() {
+  //   console.log("render");
+  //   this.rendered = true;
+  // }
+
+  // beforeSubmit(event){
+  //   console.log("beforeSubmit", event)
+  // }
+
+  // change(event) {
+  //   console.log("change", event);
+  //   if (event.data) {
+  //     this.data = event.data;
+  //   }
+  // }
+
+  // invalid(event) {
+  //   console.log("Invalid", event);
+  // }
+
+  // errorChange(event){
+  //   console.log("errorChange", event)
+  // }
+
+  // formLoad(event) {
+  //   console.log("formLoad", event)
+  // }
+
+  // ready(){
+  //   console.log("ready", event)
+  // }
+
+  // @ViewChild('json', {static: false}) jsonElement?: ElementRef;
+  // public form: Object = {
+  //   components: []
+  // };
+
+  // onChange(event) {
+  //   this.jsonElement.nativeElement.innerHTML = '';
+  //   this.jsonElement.nativeElement.appendChild(document.createTextNode(JSON.stringify(event.form, null, 4)));
+  // }
 }

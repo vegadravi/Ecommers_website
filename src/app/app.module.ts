@@ -25,6 +25,10 @@ import { AdminViewOrderComponent } from './admin-view-order/admin-view-order.com
 import { AdminItemsComponent } from './page/admin-items/admin-items.component';
 import { AdminHelpComponent } from './page/admin-help/admin-help.component';
 import { AdminSettingComponent } from './page/admin-setting/admin-setting.component';
+import { FormioAppConfig, FormioModule } from 'angular-formio';
+import {ToastModule} from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+      
 // import { AdminHomeRoutingModule } from './page/admin-home/admin-home-routing.module';
 // import { AdminItemsModule } from './page/admin-items/admin-items.module';
 // import { AdminItemsModule } from './admin-items/admin-items.module';
@@ -58,13 +62,21 @@ import { AdminSettingComponent } from './page/admin-setting/admin-setting.compon
     AppRoutingModule,
     // AdminHomeRoutingModule,
     FormsModule,
+    FormioModule,
     ReactiveFormsModule,
     // AdminItemsModule,
     HttpClientModule,
+    ToastModule,
+    BrowserAnimationsModule
     // AdminItemsModule
     // AdminModule
   ],
-  providers: [],
+  // providers:    [ {provide: FormioAppConfig, useValue: {
+  //   appUrl: 'https://examples.form.io',
+  //   apiUrl: 'https://api.form.io',
+  //   icons: 'fontawesome'
+  // }} ],
+  providers:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
