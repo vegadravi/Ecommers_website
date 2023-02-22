@@ -119,9 +119,9 @@ export class AdminSettingComponent implements OnInit {
     if (this.settingForm.valid) {
       let formdata = this.settingForm.value
       this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' });
-      // this.httpclient.post('https://r4x-info-default-rtdb.firebaseio.com/setting.json', formdata).subscribe((Response) => {
-      //   this.settingForm = !this.settingForm;
-    //});
+      window.localStorage.setItem("formdata", JSON.stringify(formdata));
+      //this.httpclient.post('https://r4x-info-default-rtdb.firebaseio.com/setting.json', formdata).subscribe((Response) => {
+      //this.settingForm = !this.settingForm.value;
     }
     // this.settingForm = !this.settingForm;
     // display form values on success

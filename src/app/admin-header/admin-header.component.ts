@@ -8,12 +8,15 @@ import { element } from 'protractor';
   styleUrls: ['./admin-header.component.scss']
 })
 export class AdminHeaderComponent implements OnInit {
- firstNameUser:any
+ firstNameUser:any;
+ adminShopName:any;
   constructor(private httpclient:HttpClient) { }
 
   ngOnInit() {
     let newObject = JSON.parse(window.localStorage.getItem("findObj"));
     this.firstNameUser = _.cloneDeep(newObject.firstName);
+    let newAdminDetails = JSON.parse(window.localStorage.getItem("formdata"));
+    this.adminShopName = _.cloneDeep(newAdminDetails.adminPannleName);
     // this.httpclient.get('https://r4x-info-default-rtdb.firebaseio.com/admin-register.json').subscribe((data)=> {
     //   console.log('R4x',data);
     //   const userData = _.map(Object.keys(data), (key: any) => {
