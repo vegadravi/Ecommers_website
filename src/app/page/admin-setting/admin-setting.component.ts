@@ -117,9 +117,9 @@ export class AdminSettingComponent implements OnInit {
     }
     console.log('R4x', this.settingForm.valid);
     if (this.settingForm.valid) {
-      let formdata = this.settingForm.value
-      this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' });
-      window.localStorage.setItem("formdata", JSON.stringify(formdata));
+      let settingData = this.settingForm.value
+      this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Save success' });
+      window.localStorage.setItem("formdata", JSON.stringify(settingData));
       //this.httpclient.post('https://r4x-info-default-rtdb.firebaseio.com/setting.json', formdata).subscribe((Response) => {
       //this.settingForm = !this.settingForm.value;
     }

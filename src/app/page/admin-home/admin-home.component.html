@@ -1,3 +1,103 @@
-<!-- <app-admin-header></app-admin-header>
-<a [routerLink]="['/admin-item']" >Items</a>
-<router-outlet></router-outlet> -->
+<div class="header-home">
+  <p>
+    Welcome {{adminShopName}}
+  </p>
+</div>
+<div class="card-main">
+  <div class="card w-20 card-1">
+    <div class="card-body">
+      <div>
+        <h5 class="card-title">TRAFFIC</h5>
+        <p class="card-text">350,897</p>
+      </div>
+      <div>
+        <!-- <h5 class="card-title">TRAFFIC</h5> -->
+        <i class="pi pi-wifi" style="font-size: 3em"></i>
+      </div>
+    </div>
+
+  </div>
+  <div class="card w-20 card-2">
+    <div class="card-body">
+      <div>
+        <h5 class="card-title">NEW USERS</h5>
+        <p class="card-text">2,356 </p>
+      </div>
+      <div>
+        <i class="pi pi-user-plus" style="font-size: 3em"></i>
+      </div>
+
+    </div>
+  </div>
+  <div class="card w-20 card-3">
+    <div class="card-body">
+      <div>
+        <h5 class="card-title">SALES</h5>
+        <p class="card-text">924 </p>
+      </div>
+      <div>
+        <i class="pi pi-dollar" style="font-size: 3em"></i>
+      </div>
+    </div>
+  </div>
+  <div class="card w-20 card-4">
+    <div class="card-body">
+      <div>
+        <h5 class="card-title">PRODUCT</h5>
+        <p class="card-text">250014 </p>
+      </div>
+      <div>
+        <i class="pi pi-inbox" style="font-size: 3em"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="chart-main">
+  <div class="cards w-50">
+
+    <!-- <div echarts [options]="chartOption" class="demo-chart"></div> -->
+    <div id="line-chart" class="demo-chart"></div>
+
+  </div>
+  <div class="cards1 w-50">
+    <div class="static-header"><a>Statistic</a></div>
+    <div class="card-text h-full">
+      <div class="w-50 sub-class">
+        <div class="contain-sub">
+          <div>
+            <div class="sub-title">
+              <p>Orders</p>
+            </div>
+            <div class="count">
+              <p>123k</p>
+            </div>
+            <div>
+              <p><a class="percemntaPro">-60% </a>From last Week</p>
+            </div>
+          </div>
+          <div>
+            <div id="order-chart" style="width: 200px; height: 150px; padding: 0%;margin: 0%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-50 sub-class">
+        <div class="contain-sub">
+          <div>
+            <div class="sub-title">
+              <p>Profit</p>
+            </div>
+            <div class="count">
+              <p>654k</p>
+            </div>
+            <div>
+              <p><a class="percemntaPro">+02% </a>From last Week</p>
+            </div>
+          </div>
+          <div>
+            <div id="order-chart1" style="width: 200px; height: 150px; padding: 0%;margin: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

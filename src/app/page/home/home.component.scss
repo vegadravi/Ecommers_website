@@ -28,27 +28,42 @@ video {
   background-image: linear-gradient(45deg, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .7) 50%);
   background-size: 3px 3px;
   z-index: 2;
+  .mt-header{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    a{
+      color: #fff;
+      font-family: "Sofia", sans-serif;
+      font-size: 20px;
+    }
+    .logo {
+      display: inline-block;
+      position: absolute;
+      font-family: Arial;
+      cursor: pointer;
+      color: #fff;
+      margin-top: 50px;
+      top: 0;
+    } 
+    .logo .text {
+      position: absolute;
+      overflow: hidden;
+      font-size: 87px;
+      left: 53px;
+      width: 267px;
+      line-height: 70px;
+      text-align: center;
+      display: inline-block;
+      -webkit-animation-name: animation-text;
+    
+      animation-name:  animation-text;
+      animation-duration: 4s;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+  }
 }
-
-.mt-header a {
-  text-align: center;
-  color: #fff;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 3;
-  max-width: 400px;
-  height: 900px;
-  font-size: larger;
-  font-family: "Sofia", sans-serif;
-}
-
-
-// logo
-
 
 @keyframes animation-text {
   0% {
@@ -101,7 +116,7 @@ video {
   font-size: 87px;
   left: 53px;
   width: 267px;
-  line-height: 94px;
+  line-height: 70px;
   text-align: center;
   display: inline-block;
   -webkit-animation-name: animation-text;
@@ -139,4 +154,23 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   font-size: 4rem;
+}
+@media screen and (min-width: 480px) {
+
+  // .mt-header a {
+  //   text-align: center;
+  //   color: #fff;
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   margin: auto;
+  //   z-index: 3;
+  //   max-width: 400px;
+  //   height: 775px;
+  //   font-size: larger;
+  //   font-family: "Sofia", sans-serif;
+  // }
+  
 }

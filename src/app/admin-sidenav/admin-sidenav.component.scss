@@ -6,11 +6,11 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 15%;
-    background-color: #111;
+    background-color: rgb(30 41 59 / 1);
     position: fixed;
     height: 100%;
     overflow: auto;
+    min-width: 200px;
   }
   
   li a {

@@ -10,6 +10,7 @@ import { element } from 'protractor';
 export class AdminHeaderComponent implements OnInit {
  firstNameUser:any;
  adminShopName:any;
+ adminPannleNamr:any;
   constructor(private httpclient:HttpClient) { }
 
   ngOnInit() {
