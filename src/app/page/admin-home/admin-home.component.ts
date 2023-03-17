@@ -21,15 +21,21 @@ export class AdminHomeComponent implements OnInit {
   chart: any;
   smallChart:any;
   smallChart1:any;
+  piechart:any;
   // RequestOptions:any
   constructor(private httpclient:HttpClient,public router: Router) { }
 
   ngOnInit() {
     let newAdminDetails = JSON.parse(window.localStorage.getItem("formdata"));
     this.adminShopName = _.cloneDeep(newAdminDetails.userName);
+    this.Charts();
+    // Set the chart options and render the chart    
+  }
+  Charts(){
     this.chart = echarts.init(document.getElementById('line-chart')as HTMLCanvasElement);
     this.smallChart = echarts.init(document.getElementById('order-chart')as HTMLCanvasElement);
     this.smallChart1 = echarts.init(document.getElementById('order-chart1')as HTMLCanvasElement);
+    this.piechart = echarts.init(document.getElementById('pie-chart')as HTMLCanvasElement);
     // Configure the chart options
     const options = {
       tooltip: {
@@ -157,7 +163,6 @@ export class AdminHomeComponent implements OnInit {
       yAxis: {
         type: 'value',
         axisLabel: {
-          rotate: 30,
           textStyle: {
             color: 'rgb(203 213 225)',
           }
@@ -208,43 +213,88 @@ export class AdminHomeComponent implements OnInit {
      // to a column of dataset.source by default.
      series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
    };
-   this.smallChart1.setOption(option1);
-    this.smallChart.setOption(option);
-    // const options = {
-    //   xAxis: {
-    //     type: 'category',
-    //     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-    //     axisLabel:{ 
-    //       textStyle: {
-    //         color: 'rgb(203 213 225)',
-    //       }
-    //     }
-    //   },
-    //   yAxis: {
-    //     type: 'value',
-    //     axisLabel:{ 
-    //       show: true,
-    //       textStyle: {
-    //         color: 'rgba(203 213 225 / 1)',
-    //       }
-    //     }
-    //   },
-    //   series: [{
-    //     data: [820, 932, 901, 934, 1290, 1330, 1320],
-    //     type: 'line',
-    //     label: {
-    //       show: true,
-    //       position: 'top',
-    //       textStyle: {
-    //         color: 'rgba(203 213 225)'
-    //       }
-    //     },
-        
-    //   }]
-    // };
-    this.chart.setOption(options);
+   const option2 = {
+    title: {
+      text: 'Referer of a Website',
+      subtext: 'Fake Data',
+      textStyle: {
+        color:"#cbd5e1" // set the color of the title text
+      },
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+   
+    series: [
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: '30%',
+        center: ['15%', '50%'],
+        data: [
+          { value: 1048, name: 'Search Engine' },
+          { value: 735, name: 'Direct' },
+          { value: 580, name: 'Email' },
+          { value: 484, name: 'Union Ads' },
+          { value: 300, name: 'Video Ads' }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      },
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: '30%',
+        center: ['50%', '50%'],
+        data: [
+          { value: 1501, name: 'Search Engine' },
+          { value: 455, name: 'Direct' },
+          { value: 780, name: 'Email' },
+          { value: 984, name: 'Union Ads' },
+          { value: 400, name: 'Video Ads' }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      },
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: '30%',
+        center: ['85%', '50%'],
+        data: [
+          { value: 1602, name: 'Search Engine' },
+          { value: 635, name: 'Direct' },
+          { value: 680, name: 'Email' },
+          { value: 384, name: 'Union Ads' },
+          { value: 400, name: 'Video Ads' }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+    ]
+   }
+    //this.piechart.setOption
+     this.piechart.setOption(option2);
+     this.smallChart1.setOption(option1);
+     this.smallChart.setOption(option);
+     this.chart.setOption(options);
      
-    // Set the chart options and render the chart    
   }
 
   
