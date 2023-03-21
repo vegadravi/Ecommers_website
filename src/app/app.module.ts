@@ -28,6 +28,7 @@ import { AdminSettingComponent } from './page/admin-setting/admin-setting.compon
 import { FormioAppConfig, FormioModule } from 'angular-formio';
 import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';//
+import {TableModule} from 'primeng/table';
 // import { NgxEchartsModule } from 'ngx-echarts';
 
 //import {ChartModule} from 'primeng/chart';
@@ -66,6 +67,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';/
     HttpClientModule,
     // NgxEchartsModule,
     ToastModule,
+    TableModule,
     BrowserAnimationsModule,
   
     //ChartModule

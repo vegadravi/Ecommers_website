@@ -17,6 +17,8 @@ import { AdminViewOrderComponent } from './admin-view-order/admin-view-order.com
 import { AdminItemsComponent } from './page/admin-items/admin-items.component';
 import { AdminHelpComponent } from './page/admin-help/admin-help.component';
 import { AdminSettingComponent } from './page/admin-setting/admin-setting.component';
+import { AuthGuard } from './Auth/auth.guard';
+//import { AuthGuard } from './admin-view-order/auth.guard';
 
 const routes: Routes = [ 
   {
@@ -25,11 +27,13 @@ const routes: Routes = [
   },
   {
     path:'brand',
-    component:BrandHomeComponent 
+    component:BrandHomeComponent,
+    //canActivate:[AuthGuard]
   },
   {
     path:'customer-home',
-    component:CustomerHomeComponent
+    component:CustomerHomeComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'login-type',
@@ -38,8 +42,8 @@ const routes: Routes = [
  
   {
     path:'contact',
-    component:ContactComponent
-
+    component:ContactComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'register',
@@ -52,6 +56,7 @@ const routes: Routes = [
   {
     path:'admin-home',
     component:AdminHomeComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'home',
@@ -63,19 +68,23 @@ const routes: Routes = [
   },
   {
     path:'admin-view-order',
-    component:AdminViewOrderComponent
+    component:AdminViewOrderComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'admin-item',
-    component:AdminItemsComponent
+    component:AdminItemsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'admin-help',
-    component:AdminHelpComponent
+    component:AdminHelpComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'admin-setting',
-    component:AdminSettingComponent
+    component:AdminSettingComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'admin',

@@ -111,3 +111,36 @@
     <div class="w-50"></div>
   </div>
 </div>
+<!-- fake database regarding on this....... -->
+<div class="contain-main">
+  <div class="contain-main-sub w-100">
+    <div class="table-header">
+      Active User
+    </div>
+    <p-table [value]="dummyDatabase" [resizableColumns]="true">
+      <ng-template pTemplate="header">
+          <tr>
+              <th *ngFor="let col of cols" pResizableColumn>
+                  {{col.header}}
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+          <tr>
+              <td *ngFor="let col of cols" [ngClass]="dummy-class">
+                      {{car[col.field]}}
+              </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage" let-columns>
+        <tr>
+            <td [attr.colspan]="columns.length">
+                No records found
+            </td>
+        </tr>
+    </ng-template>
+  </p-table>
+  </div>
+  
+
+</div>

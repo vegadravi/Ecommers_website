@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { element } from 'protractor';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 //import { Observable } from 'rxjs/Observable';
 import { catchError } from 'rxjs/operators';
 //  import 'rxjs/add/observable/throw';
@@ -11,6 +11,7 @@ import { throwError, throwError as _throw } from 'rxjs';
 // import { EChartOption } from 'echarts';
 // import { Observable } from 'rxjs/internal/Observable';
 import * as echarts from 'echarts';
+import { ApiService } from 'src/app/service/api.service';
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
@@ -22,14 +23,36 @@ export class AdminHomeComponent implements OnInit {
   smallChart:any;
   smallChart1:any;
   piechart:any;
+  dummyDatabase:any[];
+  cols:any;
   // RequestOptions:any
-  constructor(private httpclient:HttpClient,public router: Router) { }
+  constructor(private httpclient:HttpClient, public fetchData:ApiService) { }
 
   ngOnInit() {
     let newAdminDetails = JSON.parse(window.localStorage.getItem("formdata"));
     this.adminShopName = _.cloneDeep(newAdminDetails.userName);
     this.Charts();
-    // Set the chart options and render the chart    
+    this.fetchData.getDataforDashboard().then(res =>{
+      delete res.products['images']
+      delete res.products['description'] 
+      // delete res.products['id']
+      // if(res.products['id']>1 && res.products['id']<10 ){}
+      this.dummyDatabase = res.products;
+      console.log('R4x12',this.dummyDatabase);
+      return
+    });    
+    console.log('R4x',this.dummyDatabase);
+    this.cols = [
+      { field: 'id', header: 'Id', },
+      { field: 'title', header: 'Title' },
+      { field: 'brand', header: 'Brand' },
+      { field: 'category', header: 'Category' },
+      //{ field: 'description', header: 'Description' },
+      //{ field: 'images', header: 'Images' },
+      { field: 'price', header: 'Price' },
+      { field: 'rating', header: 'Rating' },
+      { field: 'stock', header: 'Stock' },
+  ];
   }
   Charts(){
     this.chart = echarts.init(document.getElementById('line-chart')as HTMLCanvasElement);
@@ -296,6 +319,7 @@ export class AdminHomeComponent implements OnInit {
      this.chart.setOption(options);
      
   }
+  
 
   
  }

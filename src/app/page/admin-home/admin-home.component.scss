@@ -96,3 +96,33 @@
     display: flex;
     justify-content: end;
 }
+.contain-main{
+    margin: 10px;
+    display: flex;
+}
+.contain-main-sub{
+    background-color: #1e293b;
+    margin-right: 10px;
+    padding:10px;
+}
+.table-header{
+  color:white ;
+  font-weight: bold;
+  font-size: large;
+}
+
+p-table tr td{
+    background-color: #1e293b !important;
+    color: aliceblue;
+    border: none;
+}
+
+p-table tr th{
+    background-color: #1e293b !important;
+    color: aliceblue;
+    font-weight: bold;
+    border: none;
+}
+p-table ui-table-scrollable-body{
+    scroll-behavior: unset;
+}
