@@ -18,6 +18,10 @@ ul {
     color: rgb(203 213 225 /1);
     padding: 8px 16px;
     text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    background-color:  rgb(15 23 42  / 1);
   }
   
   li a.active {
@@ -26,6 +30,6 @@ ul {
   }
   
   li a:hover:not(.active) {
-    background-color: #555;
+    //background-color: #555;
     color: white;
   }
